@@ -1,11 +1,32 @@
+import React, {
+  useState,
+  useEffect,
+} from 'react';
+
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
+
+import Header from './components/Header';
+import Counter from './components/Counter';
 
 export default function App() {
+  console.info('running App');
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.info('Arrancando la app');
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Header />
+      <Text>By VisionGroup</Text>
+      <Counter />
       <StatusBar style="auto" />
     </View>
   );
